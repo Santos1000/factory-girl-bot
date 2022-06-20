@@ -1,11 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Customer, type: :model do
-  it 'Create aCustomer' do
-    subject.name = 'barbara'
-    subject.email = 'barbara@gmail.com'
-    subject.save
-
-    expect(subject.full_name).to eq('Sr. barbara')
+  it '#full_name' do
+    customer = create(:customer)
+    expect(customer.full_name).to start_with("Sr.")
   end
+  # whem create customer add + 1 in list of customers
+  it { expect { create(:customer) }.to change { Customer.all.size }.by(1) }
 end
