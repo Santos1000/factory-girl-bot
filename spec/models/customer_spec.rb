@@ -11,6 +11,42 @@ RSpec.describe Customer, type: :model do
     expect(customer.vip).to be_truthy
   end
 
+  it 'Using the attributes_for' do
+    attrs = attributes_for(:customer) # util to create hash
+    custom = Customer.create(attrs)
+    expect(custom.full_name).to start_with("Sr.")
+    puts attrs
+  end
+
   # whem create customer add + 1 in list of customers
   it { expect { create(:customer) }.to change { Customer.all.size }.by(1) }
+
+  it 'transitório' do
+    customer = create(:customer_default, upcased: true)
+    expect(customer.name.upcase).to eq(customer.name)
+  end
+
+  it 'Client male Vip' do
+    custom = create(:customer_male_vip)
+    expect(custom.gender).to eq('M')
+    expect(custom.vip).to eq(true)
+  end
+
+  it 'Client male Default' do
+    custom = create(:customer_male_default)
+    expect(custom.gender).to eq('M')
+    expect(custom.vip).to eq(false)
+  end
+
+  it 'Client female Vip' do
+    custom = create(:customer_female_vip)
+    expect(custom.gender).to eq('F')
+    expect(custom.vip).to eq(true)
+  end
+
+  it 'Client female Default' do
+    custom = create(:customer_female_default)
+    expect(custom.gender).to eq('F')
+    expect(custom.vip).to eq(false)
+  end
 end
