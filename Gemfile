@@ -35,6 +35,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capybara'
   gem 'spring-commands-rspec'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
