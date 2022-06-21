@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-# factory_bot_rails [![Build Status][ci-image]][ci] [![Code Climate][grade-image]][grade] [![Gem Version][version-image]][version]
+# factory_bot_rails 
 
 [factory_bot][fb] is a fixtures replacement with a straightforward definition
 syntax, support for multiple build strategies (saved instances, unsaved
