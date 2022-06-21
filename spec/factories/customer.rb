@@ -1,9 +1,11 @@
 FactoryBot.define do
   # aliases == apelido
   factory :customer, aliases: [:user] do
-    name Faker::Name.name
-    email Faker::Internet.email
+    name { Faker::Name.name }
+    # email { Faker::Internet.email }
 
+    sequence(:email) { |n| "meu_email_#{n}@email.com" }
+    
     trait :male do
       gender 'M'
     end
