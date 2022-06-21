@@ -5,7 +5,7 @@ FactoryBot.define do
     # email { Faker::Internet.email }
 
     sequence(:email) { |n| "meu_email_#{n}@email.com" }
-    
+
     trait :male do
       gender 'M'
     end
@@ -18,9 +18,16 @@ FactoryBot.define do
       vip true
       days_to_pay 30
     end
+
     trait :default do
       vip false
       days_to_pay 15
+    end
+
+    trait :with_orders do
+      after(:create) do |customer, evaluator|
+        create_list(:order, evaluator.qtt_order, customer: customer)
+      end
     end
 
     factory :customer_male, traits: [:male]
@@ -34,6 +41,7 @@ FactoryBot.define do
 
     transient do
       upcased false # the transient is for seting the obj factorie not the test
+      qtt_order 3 #create 3 orders test
     end
 
     after(:create) do |customer, evaluator|
