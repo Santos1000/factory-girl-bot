@@ -36,6 +36,7 @@ group :development, :test do
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
   gem 'httparty'
   gem 'rspec-rails', '~> 5.0.0'
+  gem 'vcr'
   gem 'webmock'
 end
 
