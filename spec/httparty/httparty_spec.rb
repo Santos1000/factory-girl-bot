@@ -1,13 +1,11 @@
 describe 'httparty' do
-  it 'content-type' do
+  it 'content-type', vcr: { cassette_name: 'jsonstub' } do
     # stub_request(:get, "https://jsonplaceholder.typicode.com/posts/2").
     #   to_return(status: 200, body: "", headers: {'content-type': 'application/json'})
+    response = HTTParty.get('https://jsonplaceholder.typicode.com/posts/2')
+    content_type = response.headers['content-type']
+    # puts content_type
+    expect(content_type).to match(/application\/json/)
 
-    VCR.use_cassette("jsonstub/post") do
-      response = HTTParty.get('https://jsonplaceholder.typicode.com/posts/2')
-      content_type = response.headers['content-type']
-      # puts content_type
-      expect(content_type).to match(/application\/json/)
-    end
   end
 end
