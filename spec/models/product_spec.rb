@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
-  it 'is valid with descrioption, price and category' do
+  it 'is valid with description, price and category' do
     product = create(:product)
     expect(product).to be_valid
   end
@@ -11,6 +11,8 @@ RSpec.describe Product, type: :model do
     product.valid?
     expect(product.errors[:price]).to include("can't be blank")
   end
+
+  it { should validate_presence_of(:price) }
 
   it 'is invalid without category' do
     product = build(:product, category: nil)

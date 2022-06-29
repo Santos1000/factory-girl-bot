@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.describe Customer, type: :model do
   it '#full_name' do
     customer = create(:user) # or create(:customer)
-    customer1 = create(:user)
-    puts customer.email
-    puts customer1.email
-    expect(customer.full_name).to start_with("Sr.")
+    # customer1 = create(:user)
+    # puts customer.email
+    # puts customer1.email
+    expect(customer.full_name).to start_with('Sr.')
   end
 
-  it '#full_name - sobrescrevendo atributo' do
+  it '# full_name - sobrescrevendo atributo' do
     customer = create(:customer_vip)
     expect(customer.vip).to be_truthy
   end
@@ -17,7 +17,7 @@ RSpec.describe Customer, type: :model do
   it 'Using the attributes_for' do
     attrs = attributes_for(:customer) # util to create hash
     custom = Customer.create(attrs)
-    expect(custom.full_name).to start_with("Sr.")
+    expect(custom.full_name).to start_with('Sr.')
     puts attrs
   end
 
@@ -54,7 +54,7 @@ RSpec.describe Customer, type: :model do
   end
 
   it 'Travel_to date' do
-    travel_to Time.zone.local(2008, 10, 10, 10, 04, 44) do
+    travel_to Time.zone.local(2008, 10, 10, 10, 0, 44) do
       @customer = create(:customer_female_vip)
     end
     puts @customer.created_at

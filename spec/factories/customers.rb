@@ -42,7 +42,7 @@ FactoryBot.define do
 
     transient do
       upcased false # the transient is for seting the obj factorie not the test
-      qtt_order 3 #create 3 orders test
+      qtt_order 3 # create 3 orders test
     end
 
     after(:create) do |customer, evaluator|

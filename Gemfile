@@ -38,6 +38,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
   gem 'vcr'
   gem 'webmock'
+  gem 'rubocop-rspec', require: false
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do
