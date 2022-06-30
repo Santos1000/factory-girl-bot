@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Customer, type: :model do
   it '#full_name' do
-    customer = create(:user) # or create(:customer)
+    customer = create(:user, name: 'Barbara Santos') # or create(:customer)
     # customer1 = create(:user)
     # puts customer.email
     # puts customer1.email
