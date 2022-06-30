@@ -8,21 +8,21 @@ FactoryBot.define do
     sequence(:email) { |n| "meu_email_#{n}@email.com" }
 
     trait :male do
-      gender 'M'
+      gender { 'M' }
     end
 
     trait :female do
-      gender 'F'
+      gender { 'F' }
     end
 
     trait :vip do
-      vip true
-      days_to_pay 30
+      vip { true }
+      days_to_pay { 30 }
     end
 
     trait :default do
-      vip false
-      days_to_pay 15
+      vip { false }
+      days_to_pay { 15 }
     end
 
     trait :with_orders do
@@ -41,8 +41,8 @@ FactoryBot.define do
     factory :customer_female_default, traits: [:female, :default]
 
     transient do
-      upcased false # the transient is for seting the obj factorie not the test
-      qtt_order 3 # create 3 orders test
+      upcased { false } # the transient is for seting the obj factorie not the test
+      qtt_order { 3 } # create 3 orders test
     end
 
     after(:create) do |customer, evaluator|
