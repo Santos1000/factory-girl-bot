@@ -25,7 +25,7 @@ RSpec.describe CustomersController, type: :controller do
     end
 
     it 'Route' do
-      should route(:get, '/customers').to(action: :index)
+      is_expected.to route(:get, '/customers').to(action: :index)
     end
 
     it 'Contet-type JSON' do

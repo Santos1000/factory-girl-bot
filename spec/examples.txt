@@ -1,13 +1,14 @@
 example_id                                               | status | run_time        |
 -------------------------------------------------------- | ------ | --------------- |
-./spec/controllers/customers_controller_spec.rb[1:1:1:1] | passed | 0.00318 seconds |
-./spec/controllers/customers_controller_spec.rb[1:1:1:2] | passed | 0.01269 seconds |
-./spec/controllers/customers_controller_spec.rb[1:2:1]   | passed | 0.01406 seconds |
-./spec/controllers/customers_controller_spec.rb[1:2:2]   | passed | 0.01979 seconds |
-./spec/controllers/customers_controller_spec.rb[1:2:3]   | passed | 0.01542 seconds |
-./spec/controllers/customers_controller_spec.rb[1:2:4]   | passed | 0.04923 seconds |
-./spec/controllers/customers_controller_spec.rb[1:2:5]   | passed | 0.01619 seconds |
-./spec/controllers/customers_controller_spec.rb[1:2:6]   | passed | 0.01618 seconds |
+./spec/controllers/customers_controller_spec.rb[1:1:1:1] | passed | 0.00492 seconds |
+./spec/controllers/customers_controller_spec.rb[1:1:1:2] | passed | 0.00639 seconds |
+./spec/controllers/customers_controller_spec.rb[1:2:1]   | passed | 0.01217 seconds |
+./spec/controllers/customers_controller_spec.rb[1:2:2]   | passed | 0.02881 seconds |
+./spec/controllers/customers_controller_spec.rb[1:2:3]   | passed | 0.05592 seconds |
+./spec/controllers/customers_controller_spec.rb[1:2:4]   | passed | 0.0086 seconds  |
+./spec/controllers/customers_controller_spec.rb[1:2:5]   | passed | 0.01101 seconds |
+./spec/controllers/customers_controller_spec.rb[1:2:6]   | passed | 0.01106 seconds |
+./spec/features/customers_spec.rb[1:1]                   | failed | 16.17 seconds   |
 ./spec/models/product_spec.rb[1:1]                       | passed | 0.03454 seconds |
 ./spec/models/product_spec.rb[1:2:1]                     | passed | 0.00287 seconds |
 ./spec/models/product_spec.rb[1:2:2]                     | passed | 0.00306 seconds |
