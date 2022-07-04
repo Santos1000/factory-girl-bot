@@ -42,6 +42,8 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 5.0'
   gem 'vcr'
   gem 'webmock'
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
 end
 
 group :development do
