@@ -1,6 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe 'Customers', type: :request do
+  describe ' Json ' do
+    it 'JSON: schema' do
+      get '/customers/1.json'
+      expect(response).to match_json_schema('customer') # look at spec/support/api/schemas/location.json
+    end
+
+    it 'SHOW: JSON simple rspec' do
+      get '/customers/1.json'
+      response_body = JSON.parse(response.body)
+      expect(response_body.fetch('id')).to eq(1)
+      espect(response_body.fetch('name')).to be_kind_of(String)
+      espect(response_body.fetch('email')).to be_kind_of(String)
+    end
+  end
+
   describe 'GET /customers' do
     it 'works! 200 ok' do
       get customers_path
@@ -23,14 +38,6 @@ RSpec.describe 'Customers', type: :request do
         name: (be_kind_of String),
         email: (be_kind_of String)
       )
-    end
-
-    it 'SHOW: JSON simple rspec' do
-      get '/customers/1.json'
-      response_body = JSON.parse(response.body)
-      expect(response_body.fetch('id')).to eq(1)
-      espect(response_body.fetch('name')).to be_kind_of(String)
-      espect(response_body.fetch('email')).to be_kind_of(String)
     end
   end
 
@@ -69,7 +76,7 @@ RSpec.describe 'Customers', type: :request do
     )
   end
 
-  it 'destroy - JSON' do
+  it 'DESTROY: JSON' do
     member = create(:member)
     login_as(member, scope: :member)
 
